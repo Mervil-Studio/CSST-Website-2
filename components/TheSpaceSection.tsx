@@ -66,19 +66,18 @@ const principles = [
   },
 ];
 
-// Three smaller photos that tile horizontally — swap for real CSST campus shots
 const spacePhotos = [
   {
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop&auto=format&q=75",
-    alt: "Modern collaborative workspace — placeholder for CSST interior",
+    src: "/csst/break-hub-space.jpg",
+    alt: "CSST open hub with collaboration seating and project tables",
   },
   {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop&auto=format&q=75",
-    alt: "Students working together — placeholder for CSST team space",
+    src: "/csst/space-lockers.jpg",
+    alt: "CSST locker wall in the student commons",
   },
   {
-    src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&auto=format&q=75",
-    alt: "Students in a modern learning environment — placeholder",
+    src: "/csst/break-hallway.jpg",
+    alt: "CSST hallway with glass-walled meeting rooms",
   },
 ];
 
@@ -131,46 +130,32 @@ export default function TheSpaceSection() {
           </motion.p>
         </div>
 
-        {/* Photo triptych — replace with real CSST photos */}
+        {/* Photo triptych — CSST physical space */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.28 }}
-          className="grid grid-cols-3 gap-3 mb-16 rounded-2xl overflow-hidden"
-          style={{ height: 260 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-16"
         >
           {spacePhotos.map((photo, i) => (
-            <div key={i} className="relative overflow-hidden group" style={{ borderRadius: i === 0 ? "1rem 0 0 1rem" : i === 2 ? "0 1rem 1rem 0" : 0 }}>
+            <div
+              key={i}
+              className="relative overflow-hidden rounded-2xl group h-56 sm:h-72 lg:h-[400px]"
+            >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="33vw"
+                sizes="(max-width: 640px) 100vw, 33vw"
                 unoptimized
               />
-              {/* Tint overlay */}
               <div
                 className="absolute inset-0 opacity-20 transition-opacity duration-300 group-hover:opacity-10"
                 style={{ background: `rgba(var(--accent-rgb), 0.15)` }}
               />
-              {/* Divider line between cells */}
-              {i < 2 && (
-                <div className="absolute top-0 right-0 bottom-0 w-px" style={{ background: "var(--bg-secondary)" }} />
-              )}
             </div>
           ))}
-          {/* Caption bar */}
-          <div
-            className="col-span-3 -mt-px px-4 py-2 text-[10px] font-medium tracking-wide text-center"
-            style={{
-              background: `rgba(var(--accent-rgb), 0.08)`,
-              color: "var(--text-muted)",
-              borderTop: "1px solid var(--border-subtle)",
-            }}
-          >
-            Placeholder photos · Real CSST campus images coming soon
-          </div>
         </motion.div>
 
         {/* Two-column: space features + principles */}

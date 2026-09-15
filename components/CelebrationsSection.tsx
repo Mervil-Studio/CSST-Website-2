@@ -14,20 +14,24 @@ const BEHOLD_FEED_ID = ""; // ← paste Behold Feed ID here
 
 const INSTAGRAM_URL = "https://www.instagram.com/csrockets_cos/";
 
-// Placeholder posts — 12 items = 3 rows × 4 cols on desktop
+// Real CSST photos — 16 items = 4 rows × 4 cols on desktop
 const PLACEHOLDER_POSTS = [
-  { id:  "1", img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=500&h=500&fit=crop&auto=format&q=80", caption: "Students collaborating" },
-  { id:  "2", img: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=500&h=500&fit=crop&auto=format&q=80", caption: "Innovation in the classroom" },
-  { id:  "3", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&h=500&fit=crop&auto=format&q=80", caption: "Teamwork" },
-  { id:  "4", img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&h=500&fit=crop&auto=format&q=80", caption: "Student presentations" },
-  { id:  "5", img: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=500&h=500&fit=crop&auto=format&q=80", caption: "Celebrating achievements" },
-  { id:  "6", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=500&fit=crop&auto=format&q=80", caption: "Learning together" },
-  { id:  "7", img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&h=500&fit=crop&auto=format&q=80", caption: "Community celebration" },
-  { id:  "8", img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=500&fit=crop&auto=format&q=80", caption: "Hands-on learning" },
-  { id:  "9", img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=500&h=500&fit=crop&auto=format&q=80", caption: "STEM exploration" },
-  { id: "10", img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&h=500&fit=crop&auto=format&q=80", caption: "School life" },
-  { id: "11", img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&h=500&fit=crop&auto=format&q=80", caption: "Making a difference" },
-  { id: "12", img: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=500&h=500&fit=crop&auto=format&q=80", caption: "Future ready" },
+  { id:  "1", img: "/csst/g01-teacher-student-laptop.jpg",  caption: "One-on-one mentoring" },
+  { id:  "2", img: "/csst/g02-student-waving.jpg",          caption: "Engaged and ready" },
+  { id:  "3", img: "/csst/g03-student-cad.jpg",             caption: "3D design in action" },
+  { id:  "4", img: "/csst/g04-classroom-wide.jpg",          caption: "Active learning" },
+  { id:  "5", img: "/csst/g05-student-focused.jpg",         caption: "Deep in the work" },
+  { id:  "6", img: "/csst/g06-two-students-hub.jpg",        caption: "Friends at the hub" },
+  { id:  "7", img: "/csst/g07-classroom-space.jpg",         caption: "The classroom" },
+  { id:  "8", img: "/csst/g08-full-class.jpg",              caption: "All together now" },
+  { id:  "9", img: "/csst/g09-teacher-student-couch.jpg",   caption: "Teacher-student collaboration" },
+  { id: "10", img: "/csst/g10-admin-student.jpg",           caption: "Leadership in action" },
+  { id: "11", img: "/csst/g11-student-raising-hand.jpg",    caption: "Curiosity wins" },
+  { id: "12", img: "/csst/g12-ribbon-cutting.jpg",          caption: "Grand Opening — Aug 2025" },
+  { id: "13", img: "/csst/g13-community-event.jpg",         caption: "Community at CSST" },
+  { id: "14", img: "/csst/g14-ribbon-closeup.jpg",          caption: "Cutting the ribbon" },
+  { id: "15", img: "/csst/g15-speaker-event.jpg",           caption: "Opening day conversations" },
+  { id: "16", img: "/csst/g16-csst-plaque.jpg",             caption: "Colorado Springs School of Technology" },
 ];
 
 // Injects the Behold widget script once and renders the custom element via dangerouslySetInnerHTML
@@ -114,14 +118,17 @@ export default function CelebrationsSection() {
           {hasFeed ? (
             <BeholdFeed feedId={BEHOLD_FEED_ID} />
           ) : (
-            // Placeholder grid until Behold is connected
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            // CSST UGC photo grid — 4×4
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {PLACEHOLDER_POSTS.map((post, i) => (
-                <motion.div
+                <motion.a
                   key={post.id}
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
+                  transition={{ duration: 0.4, delay: 0.1 + i * 0.04 }}
                   className="relative aspect-square rounded-xl overflow-hidden group border"
                   style={{ borderColor: "var(--border-subtle)" }}
                 >
@@ -131,29 +138,29 @@ export default function CelebrationsSection() {
                     alt={post.caption}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end p-2">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-end p-2">
                     <p className="text-white text-[10px] leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {post.caption}
                     </p>
                   </div>
-                  {/* Placeholder label */}
-                  <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wide text-white/70 bg-black/40">
-                    placeholder
+                  {/* Instagram icon on hover */}
+                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-4 h-4 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           )}
         </motion.div>
 
-        {/* Behold setup nudge — only shown in dev/placeholder mode */}
+        {/* Follow link footer */}
         {!hasFeed && (
-          <p className="mt-6 text-xs text-center" style={{ color: "var(--text-muted)", opacity: 0.5 }}>
-            Live Instagram feed via{" "}
-            <a href="https://behold.so" target="_blank" rel="noopener noreferrer" className="underline">
-              Behold.so
+          <p className="mt-6 text-xs text-center" style={{ color: "var(--text-muted)", opacity: 0.6 }}>
+            Follow{" "}
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="underline font-medium">
+              @csrockets_cos
             </a>{" "}
-            — add your Feed ID to <code>components/CelebrationsSection.tsx</code> to go live.
+            on Instagram for the latest from CSST.
           </p>
         )}
 

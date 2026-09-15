@@ -107,19 +107,6 @@ All files are plain JSON — can also be edited directly in GitHub's web editor 
 
 ---
 
-## Google Calendar (School Calendar section)
-
-The calendar section is built and styled but shows a placeholder until the embed URL is added.
-
-1. Open Google Calendar → Settings → click your calendar name
-2. Scroll to "Integrate calendar" → copy the `src` URL from the embed code
-3. Open `components/CalendarSection.tsx`
-4. Paste the URL into `GOOGLE_CALENDAR_EMBED_URL` (line ~17)
-5. Optionally update `GOOGLE_CALENDAR_PUBLIC_URL` with the public link
-6. Commit and push
-
----
-
 ## Theme System
 
 The site has 4 pathway themes — visitors can switch between them.
@@ -189,7 +176,6 @@ components/
   TheSpaceSection.tsx   ← Facility / campus section
   ProgramTracks.tsx     ← Academic pathways
   EcosystemSection.tsx  ← Industry partners
-  CalendarSection.tsx   ← Google Calendar embed
   TeamSection.tsx       ← Staff directory
   FAQSection.tsx        ← FAQ accordion
   AnnouncementBar.tsx   ← Persistent top bar

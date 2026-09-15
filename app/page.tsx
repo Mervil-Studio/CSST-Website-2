@@ -7,7 +7,6 @@ import TheSpaceSection from "@/components/TheSpaceSection";
 import ProgramTracks from "@/components/ProgramTracks";
 import EcosystemSection from "@/components/EcosystemSection";
 import CelebrationsSection from "@/components/CelebrationsSection";
-import CalendarSection from "@/components/CalendarSection";
 import EventsSection from "@/components/EventsSection";
 import TeamSection from "@/components/TeamSection";
 import FAQSection from "@/components/FAQSection";
@@ -30,46 +29,48 @@ export default function Home() {
       {/* Life at CSST — Instagram feed (replaces static StudentLifeSection) */}
       <CelebrationsSection />
 
-      {/* Break 1 — students collaborating */}
+      {/* Break 1 — the hub open space */}
       <ImageBreak
-        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600&h=700&fit=crop&auto=format&q=80"
-        alt="High school students working together at a whiteboard — placeholder for CSST students"
+        src="/csst/break-hub-space.jpg"
+        alt="CSST students working in the open hub space"
         height={380}
-        caption="Placeholder · Replace with CSST student photos"
       />
 
       <DiverseThinkersSection />
 
-      {/* Break 2 — students with tech */}
+      {/* Break 2 — students in a project classroom */}
       <ImageBreak
-        src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1600&h=700&fit=crop&auto=format&q=80"
-        alt="Students using technology in a modern classroom — placeholder for CSST campus"
-        height={340}
-        caption="Placeholder · Replace with CSST campus photos"
+        src="/csst/g08-full-class.jpg"
+        alt="CSST students gathered around collaborative tables in a project classroom"
+        height={380}
       />
 
       <TheSpaceSection />
+
+      {/* Break — classroom in session, heading into curriculum */}
+      <ImageBreak
+        src="/csst/g04-classroom-wide.jpg"
+        alt="CSST teacher working with students on laptops in a project classroom"
+        height={380}
+      />
+
       <ProgramTracks />
 
-      {/* Break 3 — students in group / community */}
+      {/* Break 3 — CSST brand screen */}
       <ImageBreak
-        src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&h=700&fit=crop&auto=format&q=80"
-        alt="Diverse group of high school students — placeholder for CSST student community"
+        src="/csst/break-logo-screen.jpg"
+        alt="Colorado Springs School of Technology branding on classroom screen"
         height={360}
-        caption="Placeholder · Replace with CSST community photos"
       />
 
       <EcosystemSection />
 
-      {/* Break 4 — students presenting */}
+      {/* Break 4 — campus hallway */}
       <ImageBreak
-        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&h=700&fit=crop&auto=format&q=80"
-        alt="Students presenting a project — placeholder for CSST pitch day"
+        src="/csst/break-hallway.jpg"
+        alt="CSST campus hallway with open learning spaces"
         height={320}
-        caption="Placeholder · Replace with CSST event photos"
       />
-
-      <CalendarSection />
 
       <TeamSection
         leadership={leadershipData.members}

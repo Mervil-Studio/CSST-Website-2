@@ -82,7 +82,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-bg-primary text-text-primary">
+      <body
+        className="min-h-full flex flex-col bg-bg-primary text-text-primary"
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           <AnnouncementModal />
           <AnnouncementBar />
