@@ -39,7 +39,7 @@ const faqs = [
   {
     category: "Admissions & Cost",
     q: "Is transportation provided?",
-    a: `Transportation options are available for students who reside within D11. If you live outside D11, please contact the school directly to discuss what might be available for your family.\n\n• Call: 719-328-4600\n• Email: DARIN.SMITH@d11.org\n\nCSST is located at 3650 N. Nevada Ave. — enter on the west side of the building at the CSST entrance.`,
+    a: `Transportation options are available for students who reside within D11. If you live outside D11, please contact the school directly to discuss what might be available for your family.\n\n• Call: 719-328-4600\n• Email: Darin Smith, DARIN.SMITH@d11.org\n\nCSST is located at 3650 N. Nevada Ave. — enter on the west side of the building at the CSST entrance.`,
     featured: false,
   },
   {
@@ -81,7 +81,7 @@ const faqs = [
   {
     category: "Applying",
     q: "How do I learn more or attend an Information Night?",
-    a: `Information Nights are the best first step. They're held at the school at 3650 N. Nevada Avenue — enter on the west side of the building at the CSST entrance. All nights start at 6:00 PM. You'll meet the staff, tour the facility, and get real answers to real questions.\n\nFuture information night dates are posted on the website as they're scheduled. You can also reach the school directly:\n\n• Phone: 719-328-4600\n• Email: DARIN.SMITH@d11.org\n• Website: csrockets.org\n\nApplications are submitted through the school website. The process is straightforward — the goal is to start a conversation, not to screen students out.`,
+    a: `Information Nights are the best first step. They're held at the school at 3650 N. Nevada Avenue — enter on the west side of the building at the CSST entrance. All nights start at 6:00 PM. You'll meet the staff, tour the facility, and get real answers to real questions.\n\nFuture information night dates are posted on the website as they're scheduled. You can also reach the school directly:\n\n• Phone: 719-328-4600\n• Email: Darin Smith, DARIN.SMITH@d11.org\n• Website: csrockets.org\n\nApplications are submitted through the school website. The process is straightforward — the goal is to start a conversation, not to screen students out.`,
     featured: false,
   },
 ];

@@ -230,7 +230,7 @@ export default function HeroSection() {
               style={{ borderColor: "var(--border-accent)", background: "var(--bg-elevated)", color: "var(--text-muted)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0" style={{ background: "var(--accent)" }} />
-              Questions?&nbsp;
+              Questions? Contact Darin Smith&nbsp;
               <a href="tel:7193284600" className="hover:text-accent transition-colors" style={{ color: "var(--accent)" }}>719-328-4600</a>
               <span style={{ color: "var(--text-muted)", opacity: 0.4 }}>·</span>
               <a href="mailto:DARIN.SMITH@d11.org" className="hover:text-accent transition-colors" style={{ color: "var(--accent)" }}>DARIN.SMITH@d11.org</a>

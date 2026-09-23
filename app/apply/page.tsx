@@ -233,7 +233,7 @@ export default function ApplyPage() {
                 <a href="mailto:DARIN.SMITH@d11.org?subject=CSST Application Question"
                   className="px-6 py-3 rounded-xl border text-sm transition-all"
                   style={{ borderColor: L.border, color: L.textMuted }}>
-                  Email Admissions
+                  Email Darin Smith
                 </a>
               </div>
             </motion.div>

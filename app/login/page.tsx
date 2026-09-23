@@ -69,7 +69,7 @@ export default function LoginPage() {
             </Link>
             <a href="mailto:DARIN.SMITH@d11.org?subject=Portal Access"
               className="px-6 py-3 rounded-xl border border-[#C0C0D0]/15 text-sm text-[#C0C0D0]/60 hover:text-white hover:border-[#C0C0D0]/30 transition-all">
-              Contact Admissions
+              Contact Darin Smith
             </a>
           </div>
         </motion.div>

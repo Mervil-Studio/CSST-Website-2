@@ -186,7 +186,7 @@ export default function StudentLifeSection() {
           className="mt-8 text-center text-xs"
           style={{ color: "var(--text-muted)", opacity: 0.4 }}
         >
-          Have real CSST photos to share? Email{" "}
+          Have real CSST photos to share? Email Darin Smith at{" "}
           <a
             href="mailto:DARIN.SMITH@d11.org"
             className="hover:underline transition-colors"

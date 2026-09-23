@@ -409,7 +409,7 @@ export default function TeamSection({ leadership = defaultLeadership, faculty = 
             </p>
             <a href="mailto:DARIN.SMITH@d11.org?subject=CSST Board Meeting"
               className="text-xs font-medium hover:underline flex-shrink-0" style={{ color: "var(--accent)" }}>
-              Request the link →
+              Email Darin Smith →
             </a>
           </motion.div>
         </div>
