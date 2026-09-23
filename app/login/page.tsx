@@ -67,7 +67,7 @@ export default function LoginPage() {
               className="px-6 py-3 rounded-xl bg-[#00D4FF] text-[#0A0A0F] text-sm font-bold hover:bg-white transition-colors shadow-[0_0_20px_rgba(0,212,255,0.25)]">
               ← Back to CSST
             </Link>
-            <a href="mailto:nathan.gorsch@d11.org?subject=Portal Access"
+            <a href="mailto:DARIN.SMITH@d11.org?subject=Portal Access"
               className="px-6 py-3 rounded-xl border border-[#C0C0D0]/15 text-sm text-[#C0C0D0]/60 hover:text-white hover:border-[#C0C0D0]/30 transition-all">
               Contact Admissions
             </a>

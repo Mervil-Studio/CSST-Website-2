@@ -233,7 +233,7 @@ export default function HeroSection() {
               Questions?&nbsp;
               <a href="tel:7193284600" className="hover:text-accent transition-colors" style={{ color: "var(--accent)" }}>719-328-4600</a>
               <span style={{ color: "var(--text-muted)", opacity: 0.4 }}>·</span>
-              <a href="mailto:nathan.gorsch@d11.org" className="hover:text-accent transition-colors" style={{ color: "var(--accent)" }}>nathan.gorsch@d11.org</a>
+              <a href="mailto:DARIN.SMITH@d11.org" className="hover:text-accent transition-colors" style={{ color: "var(--accent)" }}>DARIN.SMITH@d11.org</a>
             </motion.div>
           </div>
 

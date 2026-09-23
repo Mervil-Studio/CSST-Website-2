@@ -230,7 +230,7 @@ export default function ApplyPage() {
                   style={{ background: L.accent, color: "#FFFFFF", boxShadow: `0 0 20px rgba(${L.accentRgb},0.25)` }}>
                   Back to CSST →
                 </Link>
-                <a href="mailto:nathan.gorsch@d11.org?subject=CSST Application Question"
+                <a href="mailto:DARIN.SMITH@d11.org?subject=CSST Application Question"
                   className="px-6 py-3 rounded-xl border text-sm transition-all"
                   style={{ borderColor: L.border, color: L.textMuted }}>
                   Email Admissions

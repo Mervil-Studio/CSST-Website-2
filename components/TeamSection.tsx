@@ -4,6 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ExternalLink, Mail, X } from "lucide-react";
 import Image from "next/image";
+import leadershipData from "@/content/leadership.json";
+import facultyData from "@/content/faculty.json";
 
 const BASE = "/people";
 
@@ -21,123 +23,8 @@ interface Person {
 
 // ─── DEFAULT DATA (used as fallback if props not supplied) ────────────────────
 
-const defaultLeadership: Person[] = [
-  {
-    name: "Nathan Gorsch",
-    title: "Executive Director / Principal",
-    bio: "Nathan leads CSST's vision of reimagining high school as a professional environment where students grow into capable, self-directed adults. His background spans education leadership and innovation-focused learning design. Nathan built CSST from the ground up inside the Catalyst Campus ecosystem, creating a school culture where ambition is the norm.",
-    email: "nathan.gorsch@d11.org",
-    photo: `${BASE}/nathan.jpg`,
-    color: "#00D4FF",
-    initials: "NG",
-    linkedin: null,
-  },
-  {
-    name: "Bridget O'Connor",
-    title: "Dean of Students",
-    bio: "Bridget ensures every student at CSST is seen, supported, and set up for success. She builds the community culture that makes CSST feel less like a school and more like a professional home base. Bridget is the connective tissue between students, families, and staff.",
-    email: null,
-    photo: `${BASE}/bridget.jpg`,
-    color: "#A78BFA",
-    initials: "BO",
-    linkedin: null,
-  },
-  {
-    name: "Milithza McNeil",
-    title: "School Counselor",
-    bio: "Milithza guides students through academic planning, career exploration, and personal development — helping them connect their interests to real pathways into tech, business, or beyond. She is a champion for every student's unique journey.",
-    email: null,
-    photo: `${BASE}/milithza.jpg`,
-    color: "#34D399",
-    initials: "MM",
-    linkedin: null,
-  },
-  {
-    name: "Hannah Wirtjes",
-    title: "Academic Support Specialist",
-    bio: "Hannah provides individualized academic support that meets students where they are and helps them reach where they want to go. Her work ensures no student falls through the cracks, whether they're pushing ahead or finding their footing.",
-    email: null,
-    photo: `${BASE}/hannah.jpg`,
-    color: "#F59E0B",
-    initials: "HW",
-    linkedin: null,
-  },
-  {
-    name: "Stacey Chavarria",
-    title: "Admin Assistant & Registrar",
-    bio: "Stacey keeps CSST running smoothly — managing enrollment records, supporting families through the admissions process, and ensuring every student's academic record is accurate and up to date. She's often the first friendly face new families meet.",
-    photo: `${BASE}/stacey.jpg`,
-    color: "#C0C0D0",
-    initials: "SC",
-    linkedin: null,
-  },
-  {
-    name: "Andrea Mullins",
-    title: "Admin Assistant & Bookkeeper",
-    bio: "Andrea manages the financial operations and day-to-day administrative needs of the school. Her work keeps the school's resources aligned with its mission and ensures operational continuity so the rest of the team can focus on students.",
-    photo: `${BASE}/andrea.jpg`,
-    color: "#C0C0D0",
-    initials: "AM",
-    linkedin: null,
-  },
-];
-
-const defaultFaculty: Person[] = [
-  {
-    name: "Liyah Patrick",
-    title: "English & Humanities",
-    bio: "Liyah brings real-world communication and storytelling into the classroom. At CSST, English isn't just grammar — it's how you pitch an idea, write a proposal, or make your mark. She helps students find their voice and use it.",
-    photo: `${BASE}/liyah.jpg`,
-    color: "#00D4FF",
-    initials: "LP",
-    linkedin: "https://www.linkedin.com/in/liyah-patrick3000",
-  },
-  {
-    name: "Darren Kelley",
-    title: "Mathematics",
-    bio: "Darren connects math to real-world problems in technology and business, making abstract concepts concrete through project-based learning. His students leave understanding not just how to solve equations, but why math is the language of every industry.",
-    photo: `${BASE}/darren.jpg`,
-    color: "#A78BFA",
-    initials: "DK",
-    linkedin: null,
-  },
-  {
-    name: "Caleb Ulliman",
-    title: "Science",
-    bio: "Caleb teaches science through inquiry and experimentation, connecting curriculum to the aerospace and technology sectors right outside CSST's doors. His lab approach builds the critical-thinking skills that define every great engineer.",
-    photo: `${BASE}/caleb.jpg`,
-    color: "#34D399",
-    initials: "CU",
-    linkedin: "https://www.linkedin.com/in/caleb-james-ulliman-987b652ab",
-  },
-  {
-    name: "Matt Stewart",
-    title: "Social Studies",
-    bio: "Matt frames history and civics through the lens of entrepreneurship and societal change — teaching students that understanding the past is how you design the future. His discussions challenge students to think critically about systems and power.",
-    photo: `${BASE}/matt.jpg`,
-    color: "#F59E0B",
-    initials: "MS",
-    linkedin: null,
-  },
-  {
-    name: "Aly Johnson",
-    title: "Business & Marketing",
-    bio: "Aly teaches business strategy, marketing, and entrepreneurship with real startup energy. Students in her class don't just study companies — they build pitch decks, run campaigns, and learn what it actually takes to take an idea to market.",
-    photo: `${BASE}/aly.jpg`,
-    color: "#FB923C",
-    initials: "AJ",
-    linkedin: "https://www.linkedin.com/in/alyssasjohnson",
-  },
-  {
-    name: "Jerard Carney",
-    title: "Computer Science",
-    bio: "Jerard is a software and embedded systems engineer who teaches CS from the perspective of a working professional. Students learn real programming languages, work on live projects, and get exposure to the full spectrum of modern software development.",
-    photo: `${BASE}/jerard.jpg`,
-    color: "#00D4FF",
-    initials: "JC",
-    linkedin: "https://www.linkedin.com/in/jerardcarney",
-  },
-];
+const defaultLeadership = leadershipData.members as Person[];
+const defaultFaculty = facultyData.members as Person[];
 
 const defaultBoard: Person[] = [
   {
@@ -449,7 +336,7 @@ export default function TeamSection({ leadership = defaultLeadership, faculty = 
           <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.35 }}
             className="text-xs mb-10" style={{ color: "var(--text-muted)", opacity: 0.5 }}>Tap any card to learn more.</motion.p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {leadership.map((person, i) => (
               <motion.div key={person.name}
                 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3 + i * 0.08 }}>
@@ -520,7 +407,7 @@ export default function TeamSection({ leadership = defaultLeadership, faculty = 
               Board meetings are virtual &amp; open to the public. Next meeting:{" "}
               <span style={{ color: "var(--accent)", opacity: 1 }}>May 6, 2026 at 1:00 PM</span>
             </p>
-            <a href="mailto:nathan.gorsch@d11.org?subject=CSST Board Meeting"
+            <a href="mailto:DARIN.SMITH@d11.org?subject=CSST Board Meeting"
               className="text-xs font-medium hover:underline flex-shrink-0" style={{ color: "var(--accent)" }}>
               Request the link →
             </a>

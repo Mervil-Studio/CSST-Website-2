@@ -188,11 +188,11 @@ export default function StudentLifeSection() {
         >
           Have real CSST photos to share? Email{" "}
           <a
-            href="mailto:nathan.gorsch@d11.org"
+            href="mailto:DARIN.SMITH@d11.org"
             className="hover:underline transition-colors"
             style={{ color: "var(--accent)", opacity: 1 }}
           >
-            nathan.gorsch@d11.org
+            DARIN.SMITH@d11.org
           </a>
         </motion.p>
       </div>
